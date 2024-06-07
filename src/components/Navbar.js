@@ -2,6 +2,9 @@ import React from 'react'
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoLogoYoutube } from "react-icons/io5";
 import { IoSearch } from "react-icons/io5";
+import { FaMicrophone } from "react-icons/fa";
+import { RiVideoAddFill } from "react-icons/ri";
+import { MdNotificationsActive } from "react-icons/md";
 
 export default function Navbar() {
   return (
@@ -17,16 +20,27 @@ export default function Navbar() {
             <div className='flex items-center justify-center gap-5'>
                 <form>
                     <div>
-                        <div className='flex bg-zinc-900 items-center px-4 pr-2 h-10'>
+                        <div className='flex bg-zinc-900 items-center px-4 pr-2 h-10 rounded-3xl'>
                             <div className='flex gap-5 items-center pr-5'>
-                                <input type='text' placeholder='search' className='w-96 bg-zinc-900 border-none focus:outline-none'></input>
+                                <input type='text' placeholder='Search' className='w-96 bg-zinc-900 border-none focus:outline-none'></input>
                             </div>
-                            <button>
-                                    <IoSearch className='flex justify-center'/>
+                            <button className='h-10 w-16 flex items-center justify-center bg-zinc-900 rounded-r-3xl'>
+                                <IoSearch className='text-xl '/>
                             </button>
                         </div>
                     </div>
                 </form>
+                <div className='text-xl p-3 bg-zinc-900 rounded-full'>
+                    <FaMicrophone />
+                </div>
+                <div className='flex gap-5 items-center text-xl'>
+                    <RiVideoAddFill />
+                    
+                </div>
+                <div className='relative'>
+                    <MdNotificationsActive />
+                    <span className='absolute text-xs bg-red-600 rounded-full px-1 bottom-2 left-2 '>9+</span>
+                </div>
             </div>
         </div>
     </div>
