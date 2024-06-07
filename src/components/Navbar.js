@@ -35,11 +35,11 @@ export default function Navbar() {
                 </div>
                 <div className='flex gap-5 items-center text-xl'>
                     <RiVideoAddFill />
-                    
-                </div>
-                <div className='relative'>
-                    <MdNotificationsActive />
+                    <div className='relative'>
+                        <MdNotificationsActive />
                     <span className='absolute text-xs bg-red-600 rounded-full px-1 bottom-2 left-2 '>9+</span>
+                    </div>
+                    <img alt='Profile' className='w-9 h-9 rounded-full' src='https://images.unsplash.com/photo-1511367461989-f85a21fda167?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D'/>
                 </div>
             </div>
         </div>
