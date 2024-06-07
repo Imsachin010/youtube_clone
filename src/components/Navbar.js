@@ -8,8 +8,8 @@ import { MdNotificationsActive } from "react-icons/md";
 
 export default function Navbar() {
   return (
-    <div className='flex justify-between items-center px-14 h-14 bg-[#090909] opacity-95 sticky'>
-        <div className='flex gap-8 items-center text-2xl text-white'>
+    <div className='flex justify-between items-center px-14 h-14 bg-[#090909] opacity-95 sticky text-white'>
+        <div className='flex gap-8 items-center text-2xl '>
             <div>
                 <GiHamburgerMenu />
             </div>
@@ -17,6 +17,7 @@ export default function Navbar() {
                 <IoLogoYoutube className='text-2xl text-red-600'/>
                 <span className='text-xl font-semibold'>YouTube</span>
             </div>
+        </div>
             <div className='flex items-center justify-center gap-5'>
                 <form>
                     <div>
@@ -30,10 +31,12 @@ export default function Navbar() {
                         </div>
                     </div>
                 </form>
+            
                 <div className='text-xl p-3 bg-zinc-900 rounded-full'>
                     <FaMicrophone />
                 </div>
-                <div className='flex gap-5 items-center text-xl'>
+            </div>
+                <div className='flex gap-8 items-center text-xl'>
                     <RiVideoAddFill />
                     <div className='relative'>
                         <MdNotificationsActive />
@@ -41,8 +44,8 @@ export default function Navbar() {
                     </div>
                     <img alt='Profile' className='w-9 h-9 rounded-full' src='https://images.unsplash.com/photo-1511367461989-f85a21fda167?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D'/>
                 </div>
-            </div>
-        </div>
+            
+        
     </div>
   )
 }
