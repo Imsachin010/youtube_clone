@@ -8,7 +8,7 @@ import { MdNotificationsActive } from "react-icons/md";
 
 export default function Navbar() {
   return (
-    <div className='flex justify-between items-center px-14 h-14 bg-[#090909] opacity-95 sticky text-white'>
+    <div className='flex justify-between items-center px-14 h-14 bg-[#090909] opacity-95 sticky'>
         <div className='flex gap-8 items-center text-2xl '>
             <div>
                 <GiHamburgerMenu />
