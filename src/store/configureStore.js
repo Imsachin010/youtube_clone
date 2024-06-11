@@ -6,6 +6,7 @@ const store = configureStore({
     reducer:{
         youtubeApp: youtubeReducer
     }
+    // state that will rendrr videos on yt
 });
 
 export default store;
