@@ -16,7 +16,11 @@ export const getHomepageVideos = createAsyncThunk(
         // const response = await axios.get(`https://www.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&maxResults=20&key = ${API_KEY}${isNext ? `&pageToken=${nextPagetokenFromState}` : ""}`);
 
         const items = response.data.items;
+
         // extracting only req data for yt
         const parsed_Data = await parseData(items);
+
+
+        return{parseData:[...videos, ...parsed_Data], nextPageToken:nextPagetokenFromState}
     }
 )

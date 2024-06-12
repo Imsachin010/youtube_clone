@@ -2,6 +2,7 @@ import React from 'react'
 import axios from 'axios';
 import { parseVideoDuration } from './parseVideoDuration';
 import { convertrawtostring } from './convertRawtoString';
+import { timeSince } from './timeSince';
 
 const API_KEY = process.env.REACT_APP_YOUTUBE_API_KEY; 
 
