@@ -8,6 +8,7 @@ import { MdNotificationsActive } from "react-icons/md";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../hooks/useApp";
 import { changeSearchTerm, clearVideos } from "../features/youtube/youtubeSlice";
+import { getSearchpageVideos } from "../store/reducers/getSearchPageVideos";
 
 export default function Navbar() {
   const location = useLocation();
@@ -20,7 +21,7 @@ export default function Navbar() {
       return navigate("/search");
     } else {
       dispatch(clearVideos);
-      dispatch();
+      dispatch(getSearchpageVideos(false));
     }
   };
   return (

@@ -6,10 +6,12 @@ import { useAppDispatch, useAppSelector } from "../hooks/useApp";
 import { getHomepageVideos } from '../store/reducers/getHomepageVideos';
 import { useEffect } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
+import { useNavigate } from 'react-router-dom';
 
 
-export default function Home() {
-
+export default function Search() {
+  const navigate=useNavigate();
+  const searchTerm=useAppSelector((state)=>state.youtubeApp.searchTerm);
   const dispatch = useAppDispatch();
   const videos = useAppSelector((state)=> state.youtubeApp.videos);
 
