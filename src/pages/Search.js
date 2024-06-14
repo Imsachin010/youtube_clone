@@ -3,10 +3,11 @@ import Navbar from '../components/Navbar'
 import Sidebar from "../components/Sidebar";
 import Spinner from '../components/Spinner'
 import { useAppDispatch, useAppSelector } from "../hooks/useApp";
-import { getHomepageVideos } from '../store/reducers/getHomepageVideos';
 import { useEffect } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { useNavigate } from 'react-router-dom';
+import { clearVideos } from '../features/youtube/youtubeSlice';
+import { getSearchpageVideos } from '../store/reducers/getSearchPageVideos';
 
 
 export default function Search() {
@@ -16,8 +17,13 @@ export default function Search() {
   const videos = useAppSelector((state)=> state.youtubeApp.videos);
 
   useEffect(() => {
-    dispatch(getHomepageVideos(false));
-  }, [dispatch]);
+    dispatch(clearVideos(false));
+    if(searchTerm===""){
+        navigate("/");
+    }else(
+        dispatch(getSearchpageVideos(false))
+    )
+  }, [dispatch,navigate,searchTerm]);
 
   return (
     <div className='max-h-screen overflow-auto'>
@@ -29,19 +35,25 @@ export default function Search() {
       <Sidebar/>
       {
         videos.length ? (
-          <InfiniteScroll 
-          dataLength={videos.length} 
-          next={() => dispatch(getHomepageVideos(true))} 
-          hasMore={videos.length<500}
-          loader={<Spinner/>}
-          height={650}
-          >
-            <div className='grid gap-y-14 gap-x-8 grid-cols-4 p-8'>
-              {videos.map((item) => {
-                return <Card data={item} key={item.videoId}/>
-              })}
-            </div>
-          </InfiniteScroll>
+            <div className='py-8 pl-8 flex flex-col gap-5 w-full '>
+                <InfiniteScroll 
+                dataLength={videos.length} 
+                next={() => dispatch(getSearchpageVideos(true))} 
+                hasMore={videos.length<500}
+                loader={<Spinner/>}
+                height={650}
+                >
+                    
+                    {videos.map((item) => {
+                        return (
+                          <div className='my-5 '>
+                            <searchCard data={item} key={item.videoId}/>
+                          </div>
+                        )
+                    })}
+                    
+                </InfiniteScroll>
+          </div>
         ): (
           <Spinner/>
         )
