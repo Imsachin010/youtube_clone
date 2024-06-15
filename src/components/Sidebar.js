@@ -2,8 +2,8 @@ import React from 'react'
 import{ 
     MdHome, 
     MdSubscriptions, MdWatchLater,
-    MdThumbUp, MdExpandMore, MdLibraryBooks, 
-    MdSettings, MdFlag, MdHelp, MdFeedback 
+    MdThumbUp, MdLibraryBooks, 
+    MdSettings,
 } from "react-icons/md";
 import {FaHistory} from "react-icons/fa";
 import {SiYoutubeshorts} from "react-icons/si"
