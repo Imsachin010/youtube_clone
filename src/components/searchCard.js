@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 export default function searchCard({ data }) {
   return (
     <div className="flex gap-3">
@@ -8,7 +8,9 @@ export default function searchCard({ data }) {
           className="absolute bottom-3 right-3 text-sm bg-gray-900
                     py-0.5 px-2 z-10 " >{data.videoDuration}
         </span>
-        <img src={data.videoThumbnail} alt="thumbnail" className="h-52 w-96 " />
+        <Link to = {`/watch/${data.videoId}`}>
+          <img src={data.videoThumbnail} alt="thumbnail" className="h-52 w-96 " />
+        </Link>
       </div>
       <div className="flex gap-1 flex-col">
         <h3 className="max-w-2xl">

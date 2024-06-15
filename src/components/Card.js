@@ -1,6 +1,8 @@
 import React from "react";
 
-export default function Card() {
+import { Link } from "react-router-dom";
+
+export default function Card({data}) {
   return (
     <div className="w-64 h-60 gap-3 flex-col">
       <div className="relative ">
@@ -10,7 +12,9 @@ export default function Card() {
         >
           {data.videoDuration}
         </span>
-        <img src={data.videoThumbnail} alt="thumbnail" className="h-44 w-72 " />
+        <Link to = {`/watch/${data.videoId}`}>
+          <img src={data.videoThumbnail} alt="thumbnail" className="h-44 w-72 " />
+        </Link>
       </div>
       <div className="flex gap-2">
         <div className="min-w-fit">
