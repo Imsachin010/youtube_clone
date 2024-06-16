@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../hooks/useApp";
+import { getRecommendedVideo } from "../store/reducers/getRecommendedVideo";
+import { getVideoDetails } from "../store/reducers/getVideoDetails";
 import Navbar from "../components/Navbar";
 
 export default function Watch() {

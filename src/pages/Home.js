@@ -1,7 +1,8 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
 import Sidebar from "../components/Sidebar";
-import Spinner from '../components/Spinner'
+import Spinner from '../components/Spinner';
+import Card from "../components/Card";
 import { useAppDispatch, useAppSelector } from "../hooks/useApp";
 import { getHomepageVideos } from '../store/reducers/getHomepageVideos';
 import { useEffect } from 'react';
