@@ -68,8 +68,8 @@ export default function Navbar() {
         <RiVideoAddFill />
         <div className="relative">
           <MdNotificationsActive />
-          <span className="absolute text-xs bg-red-600 rounded-full px-1 bottom-2 left-2 ">
-            9+
+          <span className="absolute text-xs bg-red-600 rounded-full px-1 bottom-2 left-2 ">{" "}
+            9+{" "}
           </span>
         </div>
         <img
