@@ -14,17 +14,17 @@ try {
     const channelIds = [];
 
     items.forEach((item) => {
-        channelIds.push(items.snippet.channelId);
-        videoIds.push(items.id.videoIds);
+        channelIds.push(item.snippet.channelId);
+        videoIds.push(item.id.videoIds);
     });
 
     const {
-        data: {item:channelsData},
+        data: {items:channelsData},
     } = await axios.get(`https://www.googleapis.com/youtube/v3/channels?part=snippet.contentDetails&id=${channelIds}.join(",")}&key=${API_KEY}`);
 
     const parsedchannelsData = [];
     channelsData.forEach((channel) => parsedchannelsData.push({
-        i:channel.id,
+        id:channel.id,
         image: channel.snippet.thumbnails.default.url,
     }));
     
@@ -40,7 +40,7 @@ try {
                 videoId : item.id.videoData,
                 videoTitle : item.snippet.title,
                 videoDescription : item.snippet.description,
-                videothumbnail : item.snippet.thumbnails.medium.url,
+                videoThumbnail : item.snippet.thumbnails.medium.url,
                 videoLink : `https://www.youtube.com/watch?v=${item.id.videoId}`,
                 videoDuration : parseVideoDuration(
                     videosData[index].contentDetails.duration
@@ -49,7 +49,7 @@ try {
                     videosData[index].statistics.viewCount
                 ),
                 videoAge:timeSince(
-                    new DataTransfer(item.snippet.publishedAt)
+                    new Date(item.snippet.publishedAt)
                 ),
                 channelInfo: {
                     id: item.snippet.channelId,
@@ -65,10 +65,4 @@ try {
 catch(error){
     console.log(error)
 }
-
-  return (
-    <div>
-
-    </div>
-  )
 }

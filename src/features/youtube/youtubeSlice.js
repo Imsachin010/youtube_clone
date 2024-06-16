@@ -47,12 +47,10 @@ const youtubeSlice = createSlice({
             }
         })
         builder.addCase(getVideoDetails.fulfilled, (state,action) => {
-            if(action.payload && action.payload.parsed_Data){
-                state.currentPlaying = action.payload;
-            }
+            state.currentPlaying = action.payload; 
         })
     }
 })
 
 export const { clearVideos,changeSearchTerm,clearSearchTerm } = youtubeSlice.actions;
-export default youtubeSlice.reducers;
+export default youtubeSlice.reducer;

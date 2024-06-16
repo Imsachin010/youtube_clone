@@ -28,14 +28,15 @@ export default function Watch() {
   }, [currentPlaying, dispatch, id]);
   return (
     <>
-      {currentPlaying && currentPlaying.videoId === id && (
-        <div className="max-h-screen overflow-auto">
-          <div style={{ height: "7.5vh" }}>
+      {currentPlaying && currentPlaying?.videoId === id && (
+        <div className="max-h-screen overflow-hidden">
+          <div >
             <Navbar />
           </div>
           <div>
             <div>
                 <div>
+                  <div>
                     <iframe 
                     frameBorder={0}
                     width={800}
@@ -45,6 +46,7 @@ export default function Watch() {
                     src="https://www.youtube.com/embed/${id}?autoplay-1">
 
                     </iframe>
+                  </div>
                 </div>
             </div>
           </div>

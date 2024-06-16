@@ -6,10 +6,10 @@ import { timeSince } from '../../utils/timeSince';
 const API_KEY = process.env.REACT_APP_YOUTUBE_API_KEY;
 
 export const getVideoDetails = createAsyncThunk(
-    "youtube/App/getVideoDetails",
+    "youtube/App/videoDetails",
     async(id) => {
         const { 
-            data:{items}
+            data:{items},
         } = await axios.get(`https://www.googleapis.com/youtube/v3/videos?key=${API_KEY}&part=snippet,statistics&type=video&id=${id}`);
 
         const parsedData = parseData(items[0]);

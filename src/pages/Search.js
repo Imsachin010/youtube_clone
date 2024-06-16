@@ -11,7 +11,7 @@ import { getSearchpageVideos } from '../store/reducers/getSearchPageVideos';
 
 
 export default function Search() {
-  const navigate=useNavigate();
+  const navigate = useNavigate();
   const searchTerm=useAppSelector((state)=>state.youtubeApp.searchTerm);
   const dispatch = useAppDispatch();
   const videos = useAppSelector((state)=> state.youtubeApp.videos);

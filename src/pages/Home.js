@@ -18,7 +18,7 @@ export default function Home() {
   }, [dispatch]);
 
   return (
-    <div className='max-h-screen overflow-auto'>
+    <div className='max-h-screen overflow-hidden'>
       <div style={{height:"7.5vh"}}>
       <Navbar/>
       
